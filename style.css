@@ -1,0 +1,79 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+}
+
+body {
+    font-size: 1rem;
+    font-family: 'Kumbh Sans', sans-serif;
+    color: hsl(238, 29%, 16%);
+    display: grid;
+    place-items: center;
+    background: rgb(175, 103, 233);
+    background: linear-gradient(180deg, rgba(175, 103, 233, 1) 0%, rgba(101, 101, 231, 1) 100%);
+    min-height: 100vh;
+    margin: 0 1rem;
+}
+
+section {
+    background-color: white;
+    border-radius: 23px;
+    max-width: 50rem;
+    width: 100%;
+    min-height: 20rem;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    margin: 1rem;
+}
+
+.accordion-question {
+    font-size: 1.25rem;
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: color 0.3s ease-in-out;
+    position: relative;
+}
+
+.accordion-question.active {
+    font-weight: 700;
+}
+
+.accordion-question:hover {
+    color: #f47c57;
+    cursor: pointer;
+}
+
+i {
+    color: #f47c57;
+    transition: transform 0.3s ease-in-out;
+}
+
+.active i {
+    transform: rotate(180deg);
+}
+
+.accordion-answer {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.accordion-answer p {
+    color: hsl(240, 6%, 50%);
+    line-height: 1.5;
+    margin: 0 0 1rem 0;
+}
+
+.accordion-question:not(:first-child):before {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: hsl(240, 5%, 91%);
+    position: absolute;
+    top: 0;
+}
